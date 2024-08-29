@@ -1,0 +1,108 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000175b63c6350 .scope module, "simple_circuit_tb" "simple_circuit_tb" 2 1;
+ .timescale 0 0;
+v00000175b63b52a0_0 .var "A", 0 0;
+v00000175b63b5340_0 .var "B", 0 0;
+v00000175b63b53e0_0 .var "C", 0 0;
+v00000175b63c3240_0 .net "D", 0 0, L_00000175b6393780;  1 drivers
+v00000175b63c32e0_0 .net "E", 0 0, L_00000175b6393620;  1 drivers
+S_00000175b63c64e0 .scope module, "M1" "simple_circuit" 2 4, 3 1 0, S_00000175b63c6350;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "C";
+    .port_info 3 /OUTPUT 1 "D";
+    .port_info 4 /OUTPUT 1 "E";
+L_00000175b63b5480 .functor AND 1, v00000175b63b52a0_0, v00000175b63b5340_0, C4<1>, C4<1>;
+L_00000175b6393620 .functor NOT 1, v00000175b63b53e0_0, C4<0>, C4<0>, C4<0>;
+L_00000175b6393780 .functor OR 1, L_00000175b63b5480, L_00000175b6393620, C4<0>, C4<0>;
+v00000175b637a380_0 .net "A", 0 0, v00000175b63b52a0_0;  1 drivers
+v00000175b63930e0_0 .net "B", 0 0, v00000175b63b5340_0;  1 drivers
+v00000175b63b5020_0 .net "C", 0 0, v00000175b63b53e0_0;  1 drivers
+v00000175b63b50c0_0 .net "D", 0 0, L_00000175b6393780;  alias, 1 drivers
+v00000175b63b5160_0 .net "E", 0 0, L_00000175b6393620;  alias, 1 drivers
+v00000175b63b5200_0 .net "w1", 0 0, L_00000175b63b5480;  1 drivers
+    .scope S_00000175b63c6350;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b52a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b5340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000175b63b53e0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_00000175b63c6350;
+T_1 ;
+    %vpi_call 2 39 "$monitor", $time, "A = %b, B = %b, C = %b, D = %b, E = %b", v00000175b63b52a0_0, v00000175b63b5340_0, v00000175b63b53e0_0, v00000175b63c3240_0, v00000175b63c32e0_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_00000175b63c6350;
+T_2 ;
+    %vpi_call 2 42 "$dumpfile", "s1.vcd" {0 0 0};
+    %vpi_call 2 43 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000175b63c6350 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "scir1-tb.v";
+    "scir1.v";

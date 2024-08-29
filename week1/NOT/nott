@@ -1,0 +1,52 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000028717292d20 .scope module, "not_gate" "not_gate" 2 1;
+ .timescale 0 0;
+L_00000287173dd9d0 .functor NOT 1, v0000028717293580_0, C4<0>, C4<0>, C4<0>;
+v0000028717293580_0 .var "a", 0 0;
+v0000028717293040_0 .net "y", 0 0, L_00000287173dd9d0;  1 drivers
+S_0000028717292eb0 .scope module, "notgate" "notgate" 3 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+o00000287172c7018 .functor BUFZ 1, C4<z>; HiZ drive
+v00000287172930e0_0 .net "a", 0 0, o00000287172c7018;  0 drivers
+v00000287173dc860_0 .net "y", 0 0, L_00000287173dc900;  1 drivers
+L_00000287173dc900 .reduce/nor o00000287172c7018;
+    .scope S_0000028717292d20;
+T_0 ;
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028717293580_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028717293580_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028717293580_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0000028717292d20;
+T_1 ;
+    %vpi_call 2 11 "$monitor", $time, "a = %b, y = %b", v0000028717293580_0, v0000028717293040_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0000028717292d20;
+T_2 ;
+    %vpi_call 2 14 "$dumpfile", "not_gate.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000028717292d20 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "not-tb.v";
+    "not.v";
