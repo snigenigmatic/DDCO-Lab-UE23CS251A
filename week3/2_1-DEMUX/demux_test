@@ -1,0 +1,85 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000028af36ac790 .scope module, "test_bench_demux" "test_bench_demux" 2 1;
+ .timescale 0 0;
+v0000028af373c9e0_0 .var "data_in", 0 0;
+v0000028af373d480_0 .net "out0", 0 0, L_0000028af373d520;  1 drivers
+v0000028af373d340_0 .net "out1", 0 0, L_0000028af373c940;  1 drivers
+v0000028af373c8a0_0 .var "select", 0 0;
+S_0000028af36f5e80 .scope module, "D1" "demux_2to1" 2 5, 3 1 0, S_0000028af36ac790;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "data_in";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /OUTPUT 1 "out0";
+    .port_info 3 /OUTPUT 1 "out1";
+v0000028af36e63f0_0 .net *"_ivl_0", 31 0, L_0000028af373cbc0;  1 drivers
+v0000028af36c30e0_0 .net *"_ivl_12", 31 0, L_0000028af373d7a0;  1 drivers
+L_0000028af373d940 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000028af36ac920_0 .net *"_ivl_15", 30 0, L_0000028af373d940;  1 drivers
+L_0000028af373d988 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0000028af36f6010_0 .net/2u *"_ivl_16", 31 0, L_0000028af373d988;  1 drivers
+v0000028af36f60b0_0 .net *"_ivl_18", 0 0, L_0000028af373d660;  1 drivers
+L_0000028af373d9d0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000028af36f6150_0 .net/2u *"_ivl_20", 0 0, L_0000028af373d9d0;  1 drivers
+L_0000028af373d868 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000028af36f61f0_0 .net *"_ivl_3", 30 0, L_0000028af373d868;  1 drivers
+L_0000028af373d8b0 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000028af36f4c80_0 .net/2u *"_ivl_4", 31 0, L_0000028af373d8b0;  1 drivers
+v0000028af373d3e0_0 .net *"_ivl_6", 0 0, L_0000028af373d5c0;  1 drivers
+L_0000028af373d8f8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000028af373cd00_0 .net/2u *"_ivl_8", 0 0, L_0000028af373d8f8;  1 drivers
+v0000028af373ca80_0 .net "data_in", 0 0, v0000028af373c9e0_0;  1 drivers
+v0000028af373ce40_0 .net "out0", 0 0, L_0000028af373d520;  alias, 1 drivers
+v0000028af373cb20_0 .net "out1", 0 0, L_0000028af373c940;  alias, 1 drivers
+v0000028af373d700_0 .net "select", 0 0, v0000028af373c8a0_0;  1 drivers
+L_0000028af373cbc0 .concat [ 1 31 0 0], v0000028af373c8a0_0, L_0000028af373d868;
+L_0000028af373d5c0 .cmp/eq 32, L_0000028af373cbc0, L_0000028af373d8b0;
+L_0000028af373d520 .functor MUXZ 1, L_0000028af373d8f8, v0000028af373c9e0_0, L_0000028af373d5c0, C4<>;
+L_0000028af373d7a0 .concat [ 1 31 0 0], v0000028af373c8a0_0, L_0000028af373d940;
+L_0000028af373d660 .cmp/eq 32, L_0000028af373d7a0, L_0000028af373d988;
+L_0000028af373c940 .functor MUXZ 1, L_0000028af373d9d0, v0000028af373c9e0_0, L_0000028af373d660, C4<>;
+    .scope S_0000028af36ac790;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "data_in=%b, select=%b, out0=%b, out1=%b", v0000028af373c9e0_0, v0000028af373c8a0_0, v0000028af373d480_0, v0000028af373d340_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028af373c9e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028af373c8a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028af373c9e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028af373c8a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028af373c9e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028af373c8a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028af373c9e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028af373c8a0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000028af36ac790;
+T_1 ;
+    %vpi_call 2 18 "$dumpfile", "demux-2_1-tb.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000028af36ac790 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "demux-2_1-tb.v";
+    "demux-2_1.v";
