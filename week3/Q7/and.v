@@ -1,6 +1,5 @@
 module and_gate (
-    input S0,   // Sum output from Full Adder
-    input i3,   // Another input
+    input S0,       input i3,   // Another input
     output Y    // Output of AND gate
 );
 
