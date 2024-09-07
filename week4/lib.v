@@ -65,8 +65,9 @@ module and3 (
     output wire o 
 ); 
 
-wire t; and2 and2_0 ( i0, i1, t ); 
-and2 and2_1 ( i2, t, o ); 
+wire t; 
+and(t,i0,i1);
+and(o,t,i2);
 endmodule 
 
 module or3 ( 
