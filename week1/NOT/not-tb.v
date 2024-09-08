@@ -1,14 +1,14 @@
 module not_gate;
     reg a;
     wire y;
-    not not_gate(y, a);
+    notgate not_gate(a,y);
     initial begin
         #0 a = 0;
         #5 a = 1;
-        #5 a = 0;
+        #5;
     end
     initial begin
-        $monitor($time, "a = %b, y = %b", a, y);
+        $monitor($time, " a = %b, y = %b", a, y);
     end
     initial begin
         $dumpfile("not_gate.vcd");

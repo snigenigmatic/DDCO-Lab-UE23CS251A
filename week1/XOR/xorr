@@ -7,56 +7,54 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_000001dbc2ee2d20 .scope module, "xor_gate" "xor_gate" 2 1;
+S_00000169d8e985b0 .scope module, "xor_gate" "xor_gate" 2 1;
  .timescale 0 0;
-L_000001dbc2e8d9d0 .functor XOR 1, v000001dbc2ee3580_0, v000001dbc2ee37a0_0, C4<0>, C4<0>;
-v000001dbc2ee3580_0 .var "a", 0 0;
-v000001dbc2ee37a0_0 .var "b", 0 0;
-v000001dbc2e8ccd0_0 .net "y", 0 0, L_000001dbc2e8d9d0;  1 drivers
-S_000001dbc2ee2eb0 .scope module, "xorgate" "xorgate" 3 1;
+v00000169d8ee50f0_0 .var "a", 0 0;
+v00000169d8ee5190_0 .var "b", 0 0;
+v00000169d8ee5230_0 .net "y", 0 0, L_00000169d8e96bc0;  1 drivers
+S_00000169d8ee4f60 .scope module, "xor_gate" "xorgate" 2 4, 3 1 0, S_00000169d8e985b0;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /OUTPUT 1 "y";
-o000001dbc2f17028 .functor BUFZ 1, C4<z>; HiZ drive
-o000001dbc2f17058 .functor BUFZ 1, C4<z>; HiZ drive
-L_000001dbc2ee3360 .functor XOR 1, o000001dbc2f17028, o000001dbc2f17058, C4<0>, C4<0>;
-v000001dbc2ee3040_0 .net "a", 0 0, o000001dbc2f17028;  0 drivers
-v000001dbc2ee30e0_0 .net "b", 0 0, o000001dbc2f17058;  0 drivers
-v000001dbc2f13b80_0 .net "y", 0 0, L_000001dbc2ee3360;  1 drivers
-    .scope S_000001dbc2ee2d20;
+L_00000169d8e96bc0 .functor XOR 1, v00000169d8ee50f0_0, v00000169d8ee5190_0, C4<0>, C4<0>;
+v00000169d8e96de0_0 .net "a", 0 0, v00000169d8ee50f0_0;  1 drivers
+v00000169d8e96960_0 .net "b", 0 0, v00000169d8ee5190_0;  1 drivers
+v00000169d8e97000_0 .net "y", 0 0, L_00000169d8e96bc0;  alias, 1 drivers
+    .scope S_00000169d8e985b0;
 T_0 ;
     %delay 0, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000001dbc2ee3580_0, 0, 1;
+    %store/vec4 v00000169d8ee50f0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000001dbc2ee37a0_0, 0, 1;
+    %store/vec4 v00000169d8ee5190_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000001dbc2ee3580_0, 0, 1;
+    %store/vec4 v00000169d8ee50f0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000001dbc2ee37a0_0, 0, 1;
+    %store/vec4 v00000169d8ee5190_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000001dbc2ee3580_0, 0, 1;
+    %store/vec4 v00000169d8ee50f0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000001dbc2ee37a0_0, 0, 1;
+    %store/vec4 v00000169d8ee5190_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000001dbc2ee3580_0, 0, 1;
+    %store/vec4 v00000169d8ee50f0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000001dbc2ee37a0_0, 0, 1;
+    %store/vec4 v00000169d8ee5190_0, 0, 1;
+    %delay 5, 0;
     %end;
     .thread T_0;
-    .scope S_000001dbc2ee2d20;
+    .scope S_00000169d8e985b0;
 T_1 ;
-    %vpi_call 2 16 "$monitor", $time, "a = %b, b = %b, y = %b", v000001dbc2ee3580_0, v000001dbc2ee37a0_0, v000001dbc2e8ccd0_0 {0 0 0};
+    %vpi_call 2 17 "$monitor", $time, " a = %b, b = %b, y = %b", v00000169d8ee50f0_0, v00000169d8ee5190_0, v00000169d8ee5230_0 {0 0 0};
     %end;
     .thread T_1;
-    .scope S_000001dbc2ee2d20;
+    .scope S_00000169d8e985b0;
 T_2 ;
-    %vpi_call 2 19 "$dumpfile", "xor_gate.vcd" {0 0 0};
-    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001dbc2ee2d20 {0 0 0};
+    %vpi_call 2 20 "$dumpfile", "xor_gate.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000169d8ee4f60 {0 0 0};
     %end;
     .thread T_2;
 # The file index is used to find the file name in the following table.
