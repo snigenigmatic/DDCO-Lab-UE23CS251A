@@ -1,7 +1,7 @@
 module xnor_gate;
     reg a, b;
     wire y;
-    xnor xnor_gate(y, a, b);
+    xnorgate xnor_gate(a, b, y);
     initial begin
         #0 a = 0;
         b = 0;
@@ -11,9 +11,10 @@ module xnor_gate;
         b = 0;
         #5 a = 1;
         b = 1;
+        #5;
     end
     initial begin
-        $monitor($time, "a = %b, b = %b, y = %b", a, b, y);
+        $monitor($time, " a = %b, b = %b, y = %b", a, b, y);
     end
     initial begin
         $dumpfile("xnor_gate.vcd");

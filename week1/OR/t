@@ -7,66 +7,59 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_000002adc99ac1a0 .scope module, "or_data" "or_data" 2 8;
+S_000001913bf597b0 .scope module, "or_test" "or_test" 2 1;
+ .timescale 0 0;
+v000001913bf568d0_0 .var "a", 0 0;
+v000001913bf5b630_0 .var "b", 0 0;
+v000001913bf5b6d0_0 .net "y", 0 0, L_000001913bf56c10;  1 drivers
+S_000001913bf56560 .scope module, "or_test" "or_data" 2 4, 3 1 0, S_000001913bf597b0;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /OUTPUT 1 "c";
-o000002adc9846fd8 .functor BUFZ 1, C4<z>; HiZ drive
-o000002adc9847008 .functor BUFZ 1, C4<z>; HiZ drive
-L_000002adc99ad9e0 .functor OR 1, o000002adc9846fd8, o000002adc9847008, C4<0>, C4<0>;
-v000002adc99ad760_0 .net "a", 0 0, o000002adc9846fd8;  0 drivers
-v000002adc99ad800_0 .net "b", 0 0, o000002adc9847008;  0 drivers
-v000002adc99ad8a0_0 .net "c", 0 0, L_000002adc99ad9e0;  1 drivers
-S_000002adc99ad5d0 .scope module, "or_test" "or_test" 3 1;
- .timescale 0 0;
-L_000002adc9813120 .functor OR 1, v000002adc99ad940_0, v000002adc99ac7b0_0, C4<0>, C4<0>;
-v000002adc99ad940_0 .var "a", 0 0;
-v000002adc99ac7b0_0 .var "b", 0 0;
-v000002adc99ac850_0 .net "y", 0 0, L_000002adc9813120;  1 drivers
-    .scope S_000002adc99ad5d0;
+L_000001913bf56c10 .functor OR 1, v000001913bf568d0_0, v000001913bf5b630_0, C4<0>, C4<0>;
+v000001913bf566f0_0 .net "a", 0 0, v000001913bf568d0_0;  1 drivers
+v000001913bf56790_0 .net "b", 0 0, v000001913bf5b630_0;  1 drivers
+v000001913bf56830_0 .net "c", 0 0, L_000001913bf56c10;  alias, 1 drivers
+    .scope S_000001913bf597b0;
 T_0 ;
     %delay 0, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ad940_0, 0, 1;
+    %store/vec4 v000001913bf568d0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ac7b0_0, 0, 1;
+    %store/vec4 v000001913bf5b630_0, 0, 1;
     %delay 100, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ad940_0, 0, 1;
+    %store/vec4 v000001913bf568d0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000002adc99ac7b0_0, 0, 1;
+    %store/vec4 v000001913bf5b630_0, 0, 1;
     %delay 100, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000002adc99ad940_0, 0, 1;
+    %store/vec4 v000001913bf568d0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ac7b0_0, 0, 1;
+    %store/vec4 v000001913bf5b630_0, 0, 1;
     %delay 100, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000002adc99ad940_0, 0, 1;
+    %store/vec4 v000001913bf568d0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v000002adc99ac7b0_0, 0, 1;
+    %store/vec4 v000001913bf5b630_0, 0, 1;
     %delay 100, 0;
-    %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ad940_0, 0, 1;
-    %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002adc99ac7b0_0, 0, 1;
     %end;
     .thread T_0;
-    .scope S_000002adc99ad5d0;
+    .scope S_000001913bf597b0;
 T_1 ;
-    %vpi_call 3 15 "$monitor", $time, "a = %b, b = %b, y = %b", v000002adc99ad940_0, v000002adc99ac7b0_0, v000002adc99ac850_0 {0 0 0};
+    %vpi_call 2 15 "$monitor", $time, " a = %b, b = %b, y = %b", v000001913bf568d0_0, v000001913bf5b630_0, v000001913bf5b6d0_0 {0 0 0};
     %end;
     .thread T_1;
-    .scope S_000002adc99ad5d0;
+    .scope S_000001913bf597b0;
 T_2 ;
-    %vpi_call 3 19 "$dumpfile", "or2_test.vcd" {0 0 0};
-    %vpi_call 3 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002adc99ad5d0 {0 0 0};
+    %vpi_call 2 19 "$dumpfile", "or2_test.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001913bf56560 {0 0 0};
     %end;
     .thread T_2;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
     "<interactive>";
-    "test.v";
     "or_gate2.v";
+    "test.v";
