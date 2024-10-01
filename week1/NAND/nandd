@@ -7,58 +7,56 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_00000209a71dd6e0 .scope module, "nand_gate" "nand_gate" 2 1;
+S_00000218b64ba160 .scope module, "nand_gate" "nand_gate" 2 1;
  .timescale 0 0;
-L_00000209a70d3380 .functor NAND 1, v00000209a70d35a0_0, v00000209a70d3120_0, C4<1>, C4<1>;
-v00000209a70d35a0_0 .var "a", 0 0;
-v00000209a70d3120_0 .var "b", 0 0;
-v00000209a7104390_0 .net "y", 0 0, L_00000209a70d3380;  1 drivers
-S_00000209a71dd870 .scope module, "nandgate" "nandgate" 3 1;
+v00000218b63b51a0_0 .var "a", 0 0;
+v00000218b63b5240_0 .var "b", 0 0;
+v00000218b64bb7b0_0 .net "y", 0 0, L_00000218b64bb850;  1 drivers
+S_00000218b63b4ed0 .scope module, "nand_gate" "nandgate" 2 4, 3 1 0, S_00000218b64ba160;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /OUTPUT 1 "y";
-o00000209a7107098 .functor BUFZ 1, C4<z>; HiZ drive
-o00000209a71070c8 .functor BUFZ 1, C4<z>; HiZ drive
-L_00000209a70d37c0 .functor AND 1, o00000209a7107098, o00000209a71070c8, C4<1>, C4<1>;
-v00000209a7104430_0 .net *"_ivl_0", 0 0, L_00000209a70d37c0;  1 drivers
-v00000209a71044d0_0 .net "a", 0 0, o00000209a7107098;  0 drivers
-v00000209a7104570_0 .net "b", 0 0, o00000209a71070c8;  0 drivers
-v00000209a7104610_0 .net "y", 0 0, L_00000209a71046b0;  1 drivers
-L_00000209a71046b0 .reduce/nor L_00000209a70d37c0;
-    .scope S_00000209a71dd6e0;
+L_00000218b63b52e0 .functor AND 1, v00000218b63b51a0_0, v00000218b63b5240_0, C4<1>, C4<1>;
+v00000218b64b6dd0_0 .net *"_ivl_0", 0 0, L_00000218b63b52e0;  1 drivers
+v00000218b64b6930_0 .net "a", 0 0, v00000218b63b51a0_0;  1 drivers
+v00000218b63b5060_0 .net "b", 0 0, v00000218b63b5240_0;  1 drivers
+v00000218b63b5100_0 .net "y", 0 0, L_00000218b64bb850;  alias, 1 drivers
+L_00000218b64bb850 .reduce/nor L_00000218b63b52e0;
+    .scope S_00000218b64ba160;
 T_0 ;
     %delay 0, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v00000209a70d35a0_0, 0, 1;
+    %store/vec4 v00000218b63b51a0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v00000209a70d3120_0, 0, 1;
+    %store/vec4 v00000218b63b5240_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v00000209a70d35a0_0, 0, 1;
+    %store/vec4 v00000218b63b51a0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v00000209a70d3120_0, 0, 1;
+    %store/vec4 v00000218b63b5240_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v00000209a70d35a0_0, 0, 1;
+    %store/vec4 v00000218b63b51a0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v00000209a70d3120_0, 0, 1;
+    %store/vec4 v00000218b63b5240_0, 0, 1;
     %delay 5, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v00000209a70d35a0_0, 0, 1;
+    %store/vec4 v00000218b63b51a0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v00000209a70d3120_0, 0, 1;
+    %store/vec4 v00000218b63b5240_0, 0, 1;
+    %delay 5, 0;
     %end;
     .thread T_0;
-    .scope S_00000209a71dd6e0;
+    .scope S_00000218b64ba160;
 T_1 ;
-    %vpi_call 2 16 "$monitor", $time, "a = %b, b = %b, y = %b", v00000209a70d35a0_0, v00000209a70d3120_0, v00000209a7104390_0 {0 0 0};
+    %vpi_call 2 17 "$monitor", $time, "a = %b, b = %b, y = %b", v00000218b63b51a0_0, v00000218b63b5240_0, v00000218b64bb7b0_0 {0 0 0};
     %end;
     .thread T_1;
-    .scope S_00000209a71dd6e0;
+    .scope S_00000218b64ba160;
 T_2 ;
-    %vpi_call 2 19 "$dumpfile", "nand_gate.vcd" {0 0 0};
-    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000209a71dd6e0 {0 0 0};
+    %vpi_call 2 20 "$dumpfile", "nand_gate.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000218b63b4ed0 {0 0 0};
     %end;
     .thread T_2;
 # The file index is used to find the file name in the following table.

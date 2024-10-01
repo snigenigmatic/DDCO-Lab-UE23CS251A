@@ -1,18 +1,18 @@
 module or_test;
     reg a,b;
     wire y;
-    or or_test(y,a,b);
+    or_data or_test(a,b,y);
     initial
     begin
     #000 a = 0; b = 0;
     #100 a = 0; b = 1;
     #100 a = 1; b = 0;
     #100 a = 1; b = 1;
-    #100 a = 0; b = 0;
+    #100;
     end
     initial
     begin
-        $monitor($time, "a = %b, b = %b, y = %b", a,b, y);
+        $monitor($time, " a = %b, b = %b, y = %b", a,b, y);
     end 
     initial 
     begin

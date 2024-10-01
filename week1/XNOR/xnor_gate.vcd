@@ -1,5 +1,5 @@
 $date
-	Thu Aug 15 16:44:33 2024
+	Sun Sep 08 22:46:01 2024
 $end
 $version
 	Icarus Verilog
@@ -8,9 +8,11 @@ $timescale
 	1s
 $end
 $scope module xnor_gate $end
-$var wire 1 ! y $end
-$var reg 1 " a $end
-$var reg 1 # b $end
+$scope module xnor_gate $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # y $end
+$upscope $end
 $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
@@ -18,16 +20,17 @@ $dumpall
 $end
 #0
 $dumpvars
-0#
+1#
 0"
-1!
+0!
 $end
 #5
-0!
-1#
-#10
 0#
 1"
-#15
+#10
+0"
 1!
+#15
 1#
+1"
+#20
