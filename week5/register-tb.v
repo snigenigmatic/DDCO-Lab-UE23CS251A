@@ -12,7 +12,7 @@ module reg_file_tb;
     .rd_addr_a(rd_addr_a),
     .rd_addr_b(rd_addr_b),
     .wr_addr(wr_addr),
-    .d_in(d_in),
+    .d_in(d_in),;
     .d_out_a(d_out_a),
     .d_out_b(d_out_b)
   );
